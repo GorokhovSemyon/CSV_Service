@@ -1,0 +1,347 @@
+/****************************************
+ *****************РАСПОЛОЖЕНИЕ*****************
+ ****************************************/
+body {
+    font-family: Roboto, Arial, sans-serif;
+    background: linear-gradient(to bottom right, #585858, #111111);
+    background-attachment: fixed;
+}
+
+p.About
+{
+    color: #FFFFFF;
+    font-size: 24px;
+    font-weight: 300;
+    font-family: Roboto;
+    line-height: 36px;
+    text-align: justify;
+}
+
+h1.About_us
+{
+    color: rgba(240, 162, 77, 1);
+    font-family: Roboto;
+    line-height: 36px;
+    text-align: center;
+}
+
+div.price_list {
+    width: 100%;
+    /* max-width: 880px;*/
+    margin-top: 87px;
+    display: block;
+    padding-left: 30px;
+    padding-right: 30px;
+}
+
+a.back_2 img
+{
+    height: 68px;
+    cursor: pointer;
+    position: absolute;
+	margin-top: 100px;
+	margin-left: 100px;
+}
+
+div.top
+{
+    width: 100%;
+    /* max-width: 880px;*/
+    /*height: 500px;*/
+}
+div.loyalty {
+    width: 100%;
+    /* max-width: 880px;*/
+    display: block;
+}
+
+/****************************************
+ ****************ТАБЛИЦА*****************
+ ****************************************/
+ div.no-act
+ {
+    visibility: hidden;
+    position: absolute;
+ }
+ div.act
+ {
+    font-family: Roboto, Arial, sans-serif;
+    visibility: visible;
+ }
+table.title{
+    width: 100%;
+    max-width: 880px;
+    padding: 0;
+    margin: 0 auto;
+ }
+table.title p {
+	position: relative;
+	color: #FFFFFF;
+	cursor: pointer;
+	text-decoration: none;
+    font-size: 24px;
+    font-weight: 400;
+    text-transform: uppercase;
+}
+
+table.title p:after {
+    color: #F0A24D;
+	display: block;
+	position: absolute;
+	left: 0%; /*изменить на right:0;, чтобы изменить направление подчёркивания */
+	width: 0; /*задаём длинну линии до наведения курсора*/
+	height: 1px; /*задаём ширину линии*/
+	background-color: #F0A24D; /*задаём цвет линии*/
+	content: "";
+	transition: width 0.3s ease-out; /*задаём время анимации*/
+    margin-top: 10px;
+}
+table.title p:hover:after, table.title p:focus:after {
+	width: 100%; /*устанавливаем значение 100% чтобы ссылка подчёркивалась полностью */
+    color: #F0A24D;
+    margin-top: 10px;
+}
+table.title p:hover {
+    color: #F0A24D;
+}
+table.title th{
+    width: calc(100% / 4);
+    text-align: center;
+    padding-left: 20px;
+}
+table.title a.active
+{
+    color: #F0A24D;
+}
+
+table.price{
+    font-family: 'Roboto';
+    font-size: 20px;
+    color: #FFFFFF;
+    font-weight: 300;
+    width: 100%;
+    max-width: 880px;
+    padding-top: 80px;
+    margin: 0 auto;
+}
+table.price #name
+{
+    width: 440px;
+    padding-left: 85px;
+    padding-right: 15px;
+    color: #FFFFFF;
+}
+
+table.price #barber, table.price #top-barber
+{
+    width: 150px;
+    padding-bottom: 20px;
+    color: #FFFFFF;
+    padding-right: 55px;
+    padding-left: 0px;
+}
+
+table.price td{
+    padding-left: 10px;
+    color: #F0A24D;
+    padding-bottom: 15px;
+}
+
+/****************************************
+ *****************ЛОЯЛЬНОСТЬ*************
+ ****************************************/
+div.loyalty p{
+    font-weight: 400;
+    font-size: 32px;
+    line-height: 132.19%;
+    text-transform: uppercase;
+    font-family: Roboto;
+    font-style: italic;
+    color: #FFFFFF;
+    text-align: center;
+    max-width: 880px;
+    width: 100%;
+    padding-top: 80px;
+    margin: 0 auto;
+}
+
+div.loyalty div.loyal{
+    display: inline-block;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 132.19%;
+    text-align: center;
+    color: #F0A24D;
+    /*margin-left: 110px;*/
+    margin-top: 40px;
+    margin-bottom: 87px;
+    width: 49%;
+    max-width: 880px;
+
+}
+div.loyalty div.loyal span{
+    display: block;
+    font-weight: 900;
+    font-size: 24px;
+    line-height: 132.19%;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+
+/****************************************
+ *****************СЛАЙДЕР*****************
+ ****************************************/
+
+ .slider {
+    transition: 0.5s;
+    border-radius: 5px;
+    margin-bottom: 87px;
+}
+
+.item {
+    display: flex;
+    justify-content: space-evenly;
+    height: 100%;
+    color: #F0A24D;
+}
+
+
+.slider .item img {
+    /* object-fit: cover; */
+    /* width: 50%; */
+    height: 400px;
+    border: 1px #F0A24D;
+    border-radius: 5px;
+
+}
+
+.previous{
+    margin-left: 200px;
+}
+.next{
+    margin-right: 200px;
+}
+
+.previous, .next {
+    font-size: 32px;
+    align-self: center;
+    text-align: center;
+    line-height: 300%;
+    cursor: pointer;
+    transition: 0.5s;
+    width: 100px;
+    height: 100px;
+    position: relative;
+
+}
+
+.arrow_mobile {
+    display: none;
+}
+
+
+.slider .item {
+    animation-name: fade;
+    animation-duration: 1.5s;
+}
+
+@keyframes fade {
+    /* Устанавливаем и изменяем степень прозрачности: */
+    from {
+        opacity: 0.4
+    }
+    to {
+        opacity: 1
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .item {
+        flex-direction: column;
+    }
+
+    .slider {
+        margin: 0;
+        padding: auto;
+    }
+
+    .slider .item img {
+        width: 100%;
+        height: 80%;
+        padding: 10px;
+    }
+
+    .previous, .next {
+        display: none;
+    }
+
+    .arrow_mobile {
+        display: flex;
+        justify-content: space-around;
+    }
+
+    .previous_mobile, .next_mobile {
+        align-self: center;
+        cursor: pointer;
+        transition: 0.5s;
+        color: #F0A24D;
+    }
+}
+
+@media (max-width: 570px)
+{
+    table.title th{
+        padding-left: 5px;
+    }
+     table.title p {
+        font-size: 16px;
+    }
+    div.price_list {
+        padding-left: 5px;
+        padding-right: 5px;
+    }
+    table.price{
+        font-size: 14px;
+        padding-top: 40px;
+    }
+    table.price #name
+    {
+        padding-left: 5px;
+        padding-right: 10px;
+    }
+
+    table.price #barber, table.price #top-barber
+    {
+        width: 150px;
+        padding-bottom: 10px;
+        color: #FFFFFF;
+        padding-right: 5px;
+        padding-left: 0px;
+    }
+
+    table.price td{
+        padding-left: 10px;
+        color: #F0A24D;
+        padding-bottom: 15px;
+    }
+    div.loyalty p{
+        font-weight: 400;
+        font-size: 18px;
+        padding-top: 40px;
+    }
+    div.loyalty div.loyal{
+        font-size:16px;
+        margin-top: 20px;
+        margin-bottom: 20px;
+
+    }
+    div.loyalty div.loyal span{
+        font-size: 18px;
+    }
+    div.price_list {
+        margin-top: 40px;
+    }
+}

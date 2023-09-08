@@ -1,0 +1,169 @@
+body{
+	margin: 0;
+	font-family: 'Roboto', sans-serif;
+    background: linear-gradient(to bottom right, #585858, #111111);
+    background-attachment: fixed;
+}
+section{
+	width: 1440px;
+    margin-left: auto;
+    margin-right: auto;
+}
+section div.menu a{
+    cursor: pointer;   
+}
+
+section div.menu a img{
+    height: 68px; 
+    cursor: pointer;	
+    position: absolute;
+	margin-top: 66px;
+	margin-left: 94px;    
+}
+section div.menu a:hover img{
+    height: 78px;
+    transition-duration: 0.15s;
+    margin-top: 61px;
+	margin-left: 89px;
+}
+.reg{
+    margin-left: auto;
+    margin-right: auto;
+}
+section div.menu h1{
+	padding-top: 65px;
+	text-align: center;
+	color: #F0A24D;
+	font-size: 64px;
+	font-weight: 400;
+}
+section div.limiter{
+	margin-top: 62.5px;
+	width: 600px;
+	border: 2px solid #F0A24D;
+	border-radius: 4px;
+	margin-left: auto;
+    margin-right: auto;
+}
+
+section form.login100-form{
+	width: 500px;
+    margin-top: 20px;
+	margin-left: auto;
+    margin-right: auto;
+}
+.input100{
+	width: 392px;
+}
+.txt1{
+    font-size: 20px;
+    color: #fff;
+    line-height: 1;
+	font-weight: lighter;
+}
+.txt2{
+    font-size: 20px;
+    color: #F0A24D;
+    line-height: 1;
+	font-weight: lighter;    
+	text-decoration: none;
+}
+
+.txt3{
+    font-size: 26px;
+    color: #F0A24D;
+    line-height: 1;
+	font-weight: lighter;
+	text-decoration: none; 
+    position: relative;    
+}
+.txt3::after{
+    content: '';  
+    position: absolute;
+    bottom: 4px;
+    left: 0;
+    right: 0;    
+    height: 1px;
+    background-color: #F0A24D;
+}
+.contact100-form-checkbox{
+	margin-top: 34px;
+    display: flex;
+}
+.contact100-form-checkbox span{
+	margin-left: 14px;
+}
+.input-checkbox100 {
+    display: none
+}
+
+.label-checkbox100 {
+    cursor: pointer;
+    width: 25px;
+}
+
+input {
+    outline: none;
+    border: none;
+    background: 0 0;
+}
+.wrap-input100 {
+    width: 100%;
+    position: relative;
+    border-bottom: 1px solid #fff;
+}
+
+.input100 {
+    display: block;
+    width: 100%;
+    height: 62.5px;
+    background: 0 0;
+    font-size: 32px;
+    font-weight: normal;
+    color: #fff;
+    padding: 0 2px
+}
+.eye{
+    height: 25px;
+    border: none;
+    background: 0 0;
+    cursor: pointer;
+    appearance: none;    
+    position: absolute;
+    right: 0;
+    top: calc((100% - 25px)/2);  
+}
+
+.wrap-login100-form-btn button{
+    cursor: pointer;
+    display: block;
+	text-align: center;
+	text-decoration: none;
+	background: #F0A24D;
+	width: 378px;
+    height: 75px;
+	border-radius: 26px;
+	font-size: 26px;
+    font-weight: 500;
+	color: #000;
+	margin-top: 40px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 10px;
+    border: 1px solid #F0A24D;
+}
+.wrap-login100-form-btn button:hover{
+    background: none;
+    color: #F0A24D;
+}
+.question span{
+    display: block;
+    margin-top: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 26px;
+    color: #fff;
+    line-height: 1;
+	font-weight: lighter;
+	text-decoration: none;
+}

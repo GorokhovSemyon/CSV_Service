@@ -1,0 +1,94 @@
+<!doctype html>
+{% load static %}
+<html lang="en", lang="ru">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="icon" href="data:,">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Red+Hat+Display:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Red+Hat+Display:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto&display=swap" rel="stylesheet">
+    <!-- CSS -->
+    <link rel="stylesheet" href="{% static 'my_account/css/prof_bootstrap-grid.min.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'my_account/css/prof_reset.css' %}">
+    <link rel="stylesheet" href="{% static 'my_account/css/prof_style_acc.css' %}">
+
+    <title>Личный кабинет</title>
+  </head>
+
+  <body>
+    <div class="container-fluid">
+      <section class="container">
+        <div class="row no-gutters menu">
+          <a href="/"><img src="{% static 'my_account/img/prof_back.svg' %}"></a>
+          <div class="lk">
+            <h1>Личный кабинет</h1>
+          </div>
+        </div>
+        <div class="about">
+          <span>О себе</span>
+        </div>
+
+      <div class="me">
+          <table class="Fill_info_about_me">
+
+                <tr>
+                    <td id="first_col">Имя</td>
+                    <td id="name"><span>{{ first_name }}</span><br><hr></td>
+                </tr>
+
+                <tr>
+                    <td id="first_col">Фамилия</td>
+                    <td id="login"><span>{{ last_name }}</span><br><hr></td>
+                </tr>
+
+                <tr>
+                    <td id="first_col">Email</td>
+                    <td ><div id="for_span"><span id="email">{{ email }}</span></div><img onclick="clickemail_1(this)" class="eye" src="{% static 'my_account/img/eye-0.svg' %}" id="icon1"><br><hr></td>
+                </tr>
+
+          </table>
+
+      </div>
+
+        <div class="about" id="my_appoint">
+            <span>Мои записи</span>
+        </div>
+
+        {% if orders %}
+              <div class="my_appointment">
+                {% for order in orders %}
+                  {% if order.Master == "Master1" %}
+                    <p><span>Вы записаны на {{ order.Date }} в {{ order.Time }} на услугу "{{ order.services }}" к топ-барберу Саше.</span></p>
+                  {% elif order.Master == "Master2" %}
+                    <p><span>Вы записаны на {{ order.Date }} в {{ order.Time }} на услугу "{{ order.services }}" к барберу Виктору.</span></p>
+                  {% elif order.Master == "Master3" %}
+                    <p><span>Вы записаны на {{ order.Date }} в {{ order.Time }} на услугу "{{ order.services }}" к барберу Алексею.</span></p>
+                  {% endif %}
+                {% endfor %}
+              </div>
+        {% else %}
+            <div class="my_appointment">
+                <p><span>У вас пока нет записей.</span></p>
+            </div>
+        {% endif %}
+
+
+      <div class="exit">
+        <a href="/logout">Выйти</a>
+      </div>
+      </section>
+      </div>
+      <script src="{% static 'my_account/js/prof_main_acc.js' %}">
+          const my_email = "{{ email }}";
+      </script>
+  </body>
+</html>

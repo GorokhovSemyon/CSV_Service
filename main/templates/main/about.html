@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en", lang="ru">
+{% load static %}
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="icon" href="data:,">
+	<link rel="stylesheet" type="text/css" href="{% static 'main/about/css/my_about.css' %}">
+	<link rel="stylesheet" type="text/css" href="{% static 'main/about/css/about_bootstrap-grid.min.css' %}">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital@0;1&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"/>
+	<script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+	<title>BARBEROK</title>
+</head>
+<body>
+	<div class="container">
+		<a class="back_2" href="/"><img src="{% static 'main/about/img/about_back.svg' %}"></a>
+		<div class="row g-0">
+
+	<div class="col-2">
+
+	</div>
+
+	<div class="container col-8">
+		<h1 class="About_us">О нас</h1>
+		<p class="About">Большие города навязывают свой ритм и стиль. Мы - барбершопы, свободные от предрассудков. PORT – то место, где вы мы можете отдохнуть от динамики и условностей. У нас Вы гарантировано получите высокий сервис за отличную цену. Наши локации – это порты, где вы можете остановится, расслабиться и провести время в свое удовольствие в мужской компании, с чашкой свежесваренного кофе или чего погорячее.</p>
+		<p class="About">BARBEROK - ФЕДЕРАЛЬНАЯ СЕТЬ БАРБЕРШОПОВ, В КАЖДОМ ИЗ КОТОРЫХ ЧУВСТВУЕШЬ СЕБЯ, КАК ДОМА
+							Мы развиваем не только барберинг и мастеров, но и клиентский сервис, ставший для нас основой в работе и коммуникации с гостями и партнерами. </p>
+		<p class="About">Дочерние проекты бренда студия маникюра и красоты SODA и академия барберинга PRODLЁNKA растут бок о бок с нами, и мы каждый день создаем новое, чтобы вы могли чувствовать себя уверенно и брать от жизни самое лучшее.</p>
+
+	</div>
+
+	<div class="col-2">
+
+	</div>
+
+	<div class="slider">
+        <div class="item">
+            <a class="previous" onclick="previousSlide()">&#10094;</a>     
+            <img src="{% static 'main/about/img/about_img1.jpg' %}" alt="">
+            <a class="next" onclick="nextSlide()">&#10095;</a>
+        </div>
+
+        <div class="item">
+            <a class="previous" onclick="previousSlide()">&#10094;</a>
+            <img src="{% static 'main/about/img/about_img2.jpg' %}" alt="">
+            <a class="next" onclick="nextSlide()">&#10095;</a>
+        </div>
+
+        <div class="item">
+            <a class="previous" onclick="previousSlide()">&#10094;</a>
+            <img src="{% static 'main/about/img/about_img3.jpg' %}" alt="">
+            <a class="next" onclick="nextSlide()">&#10095;</a>
+        </div>
+        
+        <div class="arrow_mobile">
+            <a class="previous_mobile" onclick="previousSlide()">&#10094;</a>
+            <a class="next_mobile" onclick="nextSlide()">&#10095;</a>
+        </div>
+        
+    </div>
+
+	<script type="text/javascript" src="{% static 'main/about/js/about_pagination.js' %}"></script>
+	<script type="text/javascript" src="{% static 'main/about/js/about_csc.js' %}"></script>
+</body>
+</html>

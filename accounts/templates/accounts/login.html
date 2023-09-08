@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="data:,">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'authorization/css/login_bootstrap-grid.min.css' %}">
+    <link rel="stylesheet" href="{% static 'authorization/css/login_reset.css' %}">
+    <link rel="stylesheet" href="{% static 'authorization/css/login_style_auth.css' %}">
+    <title>Авторизация</title>
+</head>
+<body>
+    <div class="container-fluid">
+        <section>
+            <div class="row no-gutters menu">
+                <a href="/"><img src="{% static 'authorization/img/login_back.svg' %}"></a>
+                <div class="reg">
+                    <h1>Вход</h1>
+                </div>
+            </div>
+            <div class="limiter">
+                <div class="container-login100">
+                    <div class="wrap-login100 p-l-50 p-r-50 p-t-72 p-b-50">
+                        {% if messages %}
+                          <ul class="messages">
+                            {% for message in messages %}
+                              <li>{{ message }} </li>
+                            {% endfor %}
+                          </ul>
+                        {% endif %}
+                        <form class="login100-form validate-form" method="post" action="{% url 'login' %}">
+                            {% csrf_token %}
+                            <div class="wrap-input100 validate-input" data-validate="Valid email is required: ex@abc.xyz">
+                                <input class="input100" type="text" name="email" placeholder="ivan_petrov@mail.ru">
+                            </div>
+                            <div class="wrap-input100 validate-input" data-validate="Введите пароль">
+                                <img onclick="clickPass_1(this)" class="eye" src="{% static 'authorization/img/eye-0.svg' %}" alt="buttonpng"/>
+                                <input class="input100" type="password" placeholder="*************" name="password" id="pass">
+                            </div>
+                            <div class="container-login100-form-btn">
+                                <div class="wrap-login100-form-btn">
+                                    <button class="login100-form-btn" type="submit">
+                                        Войти
+                                    </button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="row no-gutters question">
+                <a href="/register" class="txt3 hov1">Зарегистрироваться</a>
+            </div>
+        </section>
+    </div>
+    <script src="{% static 'authorization/js/login_main.js' %}"></script>
+</body>
+</html>

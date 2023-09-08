@@ -1,0 +1,164 @@
+body{
+	margin: 0;
+	font-family: 'Roboto', sans-serif;
+    background: linear-gradient(to bottom right, #585858, #111111);
+    background-attachment: fixed;
+}
+section{
+	margin-top: 96.41px;
+    width: 1440px;
+    padding: 0;
+}
+
+section div.menu{
+    position: relative;
+    height: 75px;
+/*    margin-bottom: 40px;*/
+}
+section div.menu a {
+    height: 68px;
+    width: 74px;
+}
+
+ section div.menu a:hover img{
+    height: 72px;
+    width: 78px;
+    transition-duration: 0.15s;
+    /*margin: 0.5px 0.5px;*/
+}
+
+/*div.lk{
+    position: relative;
+    left: calc(50% - 671px/2);
+    width: 500px;
+    height: 75px;
+    margin-bottom: 40px;
+}*/
+div.lk{
+    position: relative;
+    left: calc(50% - 671px/2);
+    width: 500px;
+}
+div.lk h1{
+    font-style: normal;
+    font-weight: 400;
+    font-size: 64px;
+    line-height: 75px;
+    color: #F0A24D;
+}
+div.about{
+    position: relative;
+    width: 178px;
+    height: 38px;
+    left: calc(50% - 100px/2 - 240px);
+    margin-top: 70px;
+}
+div.about span{
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 32px;
+    line-height: 37.5px;
+    color: #FFFFFF;
+}
+
+section div.me{
+    position: relative;
+    margin-top: 30px;
+    width: 700px;
+    height: 295px;
+    margin-left: calc(50% - 700px/2);
+    border: 2px solid #F0A24D;
+    border-radius: 4px;
+    padding: 0;
+}
+
+table.Fill_info_about_me{
+    width: 100%;
+    max-width: 564px;
+    margin: 40px 68px;
+    padding: 0;
+}
+table.Fill_info_about_me #first_col
+{
+    width: 220px;
+    Line-height: 31.75px;
+    font-size: 24px;
+    font-weight: 600;
+    color: #FFFFFF;
+    font-family:Red Hat Display;
+}
+
+table.Fill_info_about_me td{
+    padding-left: 10px;
+    color: #FFFFFF;
+    padding-bottom: 30px;
+}
+
+table.Fill_info_about_me td span{
+    font-size: 20px;
+    font-weight: 300;
+    padding-left: 10px;
+    font-family: Roboto;
+    Line-height: 28.13px;
+}
+#for_span{
+    width: 80%;
+    display: inline-block;
+}
+.eye{
+    height: 20px;
+    width: 20%;
+    border: none;
+    cursor: pointer;
+}
+
+div #my_appoint{
+    margin-top: 30px;
+}
+
+section div.my_appointment{
+    position: relative;
+    width: 693px;
+    margin-left: calc(50% - 693px/2);
+    margin-top: 30px;
+    margin-bottom: 0;
+    border: 2px solid #F0A24D;
+    border-radius: 4px;
+    padding: 0;
+}
+
+section div.my_appointment p{
+    padding: 41.5px 64.5px;
+    height: 100%;
+}
+
+section div.my_appointment p span{
+    color: #FFFFFF;
+    font-size: 24px;
+    font-weight: 300;
+    font-family: Roboto;
+    line-height: 36px;
+}
+
+div.exit{
+    position: relative;
+    width: 332px;
+    height: 30px;
+    left: calc(50% - 332px/2 - 14px);
+    margin-top: 78px;
+    text-align: center;
+}
+
+div.exit a{
+    font-family: 'Roboto';
+    font-weight: 300;
+    font-size: 26px;
+    line-height: 30.47px;
+    text-decoration-line: none;
+    text-align: center;
+    color: #F0A24D;
+}
+div.exit a:hover{
+    text-decoration-line: underline;
+}
