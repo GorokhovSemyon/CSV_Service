@@ -9,5 +9,6 @@ urlpatterns = [
     path('logout/', auth_views.LogoutView.as_view(next_page='home'), name='logout'),
     path('profile/', views.profile, name='profile'),
     path('register/', views.register, name='register'),
+    path('csv_service/', include('csv_srv.urls')),
     path('REST/', include('accounts.urls')),
 ]

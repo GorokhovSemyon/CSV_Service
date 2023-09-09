@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     "main",
     "accounts",
     "whitenoise.runserver_nostatic",
+    "csv_srv"
 ]
 
 MIDDLEWARE = [
