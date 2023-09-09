@@ -1,8 +1,8 @@
 body{
 	margin: 0;
 	font-family: 'Roboto', sans-serif;
-    background: linear-gradient(to bottom right, #585858, #111111);
-    background-attachment: fixed;
+    color: #ffffff; /* Белый текст */
+    background: #343536; /* Темно-серый фон */
 }
 section{
 	width: 1440px;
@@ -33,14 +33,14 @@ section div.menu a:hover img{
 section div.menu h1{
 	padding-top: 65px;
 	text-align: center;
-	color: #F0A24D;
+	color: #b69e40;
 	font-size: 64px;
 	font-weight: 400;
 }
 section div.limiter{
 	margin-top: 62.5px;
 	width: 600px;
-	border: 2px solid #F0A24D;
+	border: 2px solid #b69e40;
 	border-radius: 4px;
 	margin-left: auto;
     margin-right: auto;
@@ -57,13 +57,13 @@ section form.login100-form{
 }
 .txt1{
     font-size: 20px;
-    color: #fff;
+    color: #ffffff;
     line-height: 1;
 	font-weight: lighter;
 }
 .txt2{
     font-size: 20px;
-    color: #F0A24D;
+    color: #b69e40;
     line-height: 1;
 	font-weight: lighter;    
 	text-decoration: none;
@@ -71,7 +71,7 @@ section form.login100-form{
 
 .txt3{
     font-size: 26px;
-    color: #F0A24D;
+    color: #b69e40;
     line-height: 1;
 	font-weight: lighter;
 	text-decoration: none; 
@@ -84,7 +84,7 @@ section form.login100-form{
     left: 0;
     right: 0;    
     height: 1px;
-    background-color: #F0A24D;
+    background-color: #b69e40;
 }
 .contact100-form-checkbox{
 	margin-top: 34px;
@@ -120,7 +120,7 @@ input {
     background: 0 0;
     font-size: 32px;
     font-weight: normal;
-    color: #fff;
+    color: #ffffff;
     padding: 0 2px
 }
 .eye{
@@ -139,7 +139,7 @@ input {
     display: block;
 	text-align: center;
 	text-decoration: none;
-	background: #F0A24D;
+	background: #b69e40;
 	width: 378px;
     height: 75px;
 	border-radius: 26px;
@@ -150,11 +150,11 @@ input {
     margin-left: auto;
     margin-right: auto;
     margin-bottom: 10px;
-    border: 1px solid #F0A24D;
+    border: 1px solid #b69e40;
 }
 .wrap-login100-form-btn button:hover{
     background: none;
-    color: #F0A24D;
+    color: #b69e40;
 }
 .question span{
     display: block;
