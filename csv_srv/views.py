@@ -1,4 +1,4 @@
-from rest_framework import generics
+from rest_framework import generics, viewsets
 from .models import CsvFile
 from .serializers import CsvFileSerializer
 from django.shortcuts import render
@@ -6,11 +6,17 @@ from django.views import View
 from .forms import CsvUploadForm
 import pandas as pd
 from .permissions import IsAdmin
+from rest_framework.permissions import IsAuthenticated
 
 class CsvFileList(generics.ListCreateAPIView):
     queryset = CsvFile.objects.all()
     serializer_class = CsvFileSerializer
     permission_classes = [IsAdmin]
+
+class CsvFileViewOnly(viewsets.ReadOnlyModelViewSet):
+    queryset = CsvFile.objects.all()
+    serializer_class = CsvFileSerializer
+    permission_classes = [IsAuthenticated]
 
 class CsvUploadView(View):
     template_name = 'csv_srv/csv_upload.html'
