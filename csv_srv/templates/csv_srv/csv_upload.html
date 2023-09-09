@@ -1,19 +1,70 @@
 <!DOCTYPE html>
+{% load static %}
 <html>
 <head>
     <title>Upload CSV File</title>
+    <link rel="stylesheet" href="{% static 'authorization/css/login_bootstrap-grid.min.css' %}">
+    <link rel="stylesheet" href="{% static 'authorization/css/login_reset.css' %}">
+    <link rel="stylesheet" href="{% static 'authorization/css/login_style_auth.css' %}">
 </head>
 <body>
-    <h1>Upload CSV File</h1>
+    <div class="container-fluid">
+        <section>
+            <div class="row no-gutters menu">
+                <a href="/"><img src="{% static 'authorization/img/login_back.svg' %}"></a>
+                <div class="reg">
+                    <h1>Upload CSV File</h1>
+                </div>
+            </div>
+            <div class="limiter">
+                <div class="container-login100">
+                    <div class="wrap-login100 p-l-50 p-r-50 p-t-72 p-b-50">
+                        <form method="post" enctype="multipart/form-data" class="login100-form validate-form" id="upload-form">
+                            {% csrf_token %}
+                            <div class="drag-drop">
+                                <p>Перетащите файлы сюда</p>
+                                <input type="file" name="csv_file" id="file-input" accept=".csv" style="display: none;">
+                            </div>
+                            <div class="container-login100-form-btn">
+                                <div class="wrap-login100-form-btn">
+                                    <input class="login100-form-btn" type="submit" value="Upload">
+                                </div>
+                            </div>
+                        </form>
+                        <script>
+                            const dragDrop = document.querySelector('.drag-drop');
+                            const fileInput = document.getElementById('file-input');
+                            const uploadForm = document.getElementById('upload-form');
 
-    <form method="post" enctype="multipart/form-data">
-        {% csrf_token %}
-        {{ form.as_p }}
-        <input type="submit" value="Upload">
-    </form>
+                            // Отменяем стандартное поведение браузера при перетаскивании файлов
+                            dragDrop.addEventListener('dragover', (e) => {
+                                e.preventDefault();
+                                dragDrop.classList.add('drag-over');
+                            });
 
-    {% if success_message %}
-        <p>{{ success_message }}</p>
-    {% endif %}
+                            dragDrop.addEventListener('dragleave', () => {
+                                dragDrop.classList.remove('drag-over');
+                            });
+
+                            dragDrop.addEventListener('drop', (e) => {
+                                e.preventDefault();
+                                dragDrop.classList.remove('drag-over');
+                                const file = e.dataTransfer.files[0];
+                                fileInput.files = e.dataTransfer.files;
+                            });
+
+                            // Обработка изменения файла в инпуте
+                            fileInput.addEventListener('change', () => {
+                                dragDrop.classList.remove('drag-over');
+                            });
+                        </script>
+                        {% if success_message %}
+                            <p>{{ success_message }}</p>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
 </body>
 </html>

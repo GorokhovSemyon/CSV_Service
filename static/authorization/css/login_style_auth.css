@@ -136,3 +136,38 @@ input {
     background: none;
     color: #b69e40;
 }
+
+.drag-drop {
+    border: 2px dashed #b69e40;
+    text-align: center;
+    padding: 20px;
+    cursor: pointer;
+}
+
+.drag-over {
+    background-color: #f0f0f0;
+}
+
+.drag-drop p {
+    font-size: 18px;
+    color: #b69e40;
+}
+
+/* Стилизация кнопки Upload */
+.container-login100-form-btn .login100-form-btn {
+    background-color: #b69e40; /* Цвет фона */
+    color: #fff; /* Цвет текста */
+    border: none; /* Убираем границу */
+    padding: 15px 30px; /* Подходящие отступы */
+    cursor: pointer; /* Замена курсора при наведении */
+    transition: background-color 0.3s; /* Плавное изменение цвета фона */
+    border-radius: 5px; /* Округление краев */
+    display: block; /* Превратить в блочный элемент */
+    margin: 0 auto; /* Центрирование по горизонтали */
+    margin-top: 20px;
+}
+
+.container-login100-form-btn .login100-form-btn:hover {
+    background-color: #987b2e; /* Цвет фона при наведении */
+}
+
