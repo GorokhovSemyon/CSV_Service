@@ -4,6 +4,7 @@ from .serializers import CsvFileSerializer
 from django.shortcuts import render
 from django.views import View
 from .forms import CsvUploadForm
+import pandas as pd
 
 class CsvFileList(generics.ListCreateAPIView):
     queryset = CsvFile.objects.all()
@@ -19,9 +20,22 @@ class CsvUploadView(View):
     def post(self, request):
         form = CsvUploadForm(request.POST, request.FILES)
         if form.is_valid():
-            # Обрабатывайте файл здесь, например, сохраняйте его в базу данных или выполняйте другие действия
+            # Получаем загруженный файл
             uploaded_file = form.cleaned_data['csv_file']
-            # Ваша логика обработки файла
+
+            # Считываем содержимое CSV-файла с помощью pandas
+            try:
+                df = pd.read_csv(uploaded_file)
+            except pd.errors.EmptyDataError:
+                # Если файл пустой, обработайте это
+                return render(request, self.template_name, {'form': form, 'error_message': 'Empty file!'})
+
+            # Создаем экземпляр модели CsvFile и сохраняем его в базе данных
+            csv_file_instance = CsvFile(
+                name=uploaded_file.name,
+                columns=list(df.columns),  # Записываем имена колонок в виде списка
+            )
+            csv_file_instance.save()
 
             # После успешной обработки, вы можете перенаправить пользователя или отобразить сообщение об успехе
             return render(request, self.template_name, {'form': form, 'success_message': 'File uploaded successfully!'})
