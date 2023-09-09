@@ -35,7 +35,7 @@ class CsvUploadView(View):
             try:
                 df = pd.read_csv(uploaded_file)
             except pd.errors.EmptyDataError:
-                # Если файл пустой, обработайте это
+                # Если файл пустой, это зафиксируется
                 return render(request, self.template_name, {'form': form, 'error_message': 'Empty file!'})
 
             # Создаем экземпляр модели CsvFile и сохраняем его в базе данных
@@ -45,8 +45,7 @@ class CsvUploadView(View):
             )
             csv_file_instance.save()
 
-            # После успешной обработки, вы можете перенаправить пользователя или отобразить сообщение об успехе
             return render(request, self.template_name, {'form': form, 'success_message': 'File uploaded successfully!'})
 
-        # Если форма не валидна, отобразите ошибки
+        # Если форма не валидна, кинуть ошибку
         return render(request, self.template_name, {'form': form})
