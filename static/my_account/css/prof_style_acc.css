@@ -159,6 +159,17 @@ div.exit a{
     text-align: center;
     color: #b69e40;
 }
+
 div.exit a:hover{
     text-decoration-line: underline;
+}
+
+div.admin_check {
+    font-family: 'Roboto';
+    font-weight: 300;
+    font-size: 26px;
+    line-height: 30.47px;
+    text-decoration-line: none;
+    text-align: center;
+    color: #b69e40;
 }

@@ -60,31 +60,26 @@
       </div>
 
         <div class="about" id="my_appoint">
-            <span>Мои записи</span>
+            <span>Доступ</span>
         </div>
 
-        {% if orders %}
-              <div class="my_appointment">
-                {% for order in orders %}
-                  {% if order.Master == "Master1" %}
-                    <p><span>Вы записаны на {{ order.Date }} в {{ order.Time }} на услугу "{{ order.services }}" к топ-барберу Саше.</span></p>
-                  {% elif order.Master == "Master2" %}
-                    <p><span>Вы записаны на {{ order.Date }} в {{ order.Time }} на услугу "{{ order.services }}" к барберу Виктору.</span></p>
-                  {% elif order.Master == "Master3" %}
-                    <p><span>Вы записаны на {{ order.Date }} в {{ order.Time }} на услугу "{{ order.services }}" к барберу Алексею.</span></p>
-                  {% endif %}
-                {% endfor %}
-              </div>
-        {% else %}
-            <div class="my_appointment">
-                <p><span>У вас пока нет записей.</span></p>
-            </div>
-        {% endif %}
 
+            <div class="my_appointment">
+                <p><span>
+                    <div class="admin_check">
+                    {% if user.is_staff %}
+                            <a href="/admin" style="color: #b69e40;">Панель админа</a>
+                    {% else %}
+                            <p>Статус админа не подтвержден</p>
+                    {% endif %}
+                    </div>
+                </span></p>
+            </div>
 
       <div class="exit">
         <a href="/logout">Выйти</a>
       </div>
+
       </section>
       </div>
       <script src="{% static 'my_account/js/prof_main_acc.js' %}">
