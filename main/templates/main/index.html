@@ -75,40 +75,15 @@
     <div class="content services" id="menu-1">
     <div class="container">
     	<div class="row templatemo_servicerow">
-        	<div class="templatemo_hexservices col-sm-6">
-            	<div class="blok text-center">
-                  <div class="hexagon-a">
-                     <a class="hlinktop" href="#">
-                     	 <div class="hexa-a">
-                         	<div class="hcontainer-a">
-                          <div class="vertical-align-a">
-                            <span class="texts-a"><i class="fa fa-bell"></i></span>
-                          </div>
-                        </div>
-                         </div>
-                     </a>
-                  </div>
-                     <div class="hexagonservices">
-                     	<a class="hlinkbott" href="#">
-                        <div class="hexa">
-                      	  <div class="hcontainer">
-                          <div class="vertical-align">
-                          <span class="texts"></span>
-                          </div>
-                        </div>
-                      </div>
-                        </a>
-                     </div>
-                     </div>
-              </div>
+
               <div class="templatemo_hexservices col-sm-6">
             	<div class="blok text-center">
                   <div class="hexagon-a">
-                     <a class="hlinktop" href="#">
+                     <a class="hlinktop" href="login">
                      	 <div class="hexa-a">
                          	<div class="hcontainer-a">
                           <div class="vertical-align-a">
-                            <span class="texts-a"><i class="fa fa-briefcase"></i></span>
+                            <span class="texts-a"><i class="fa fa-sign-in"></i></span>
                           </div>
                         </div>
                          </div>
@@ -127,19 +102,20 @@
                      </div>
                      </div>
                      <div class="templatemo_servicetext">
-                    <h3>Aliquam faucibus</h3>
-                    <p>Vivamus a purus vel ante fermentum bibendum. Sed laoreet, enim quis euismod egestas, risus tortor tincidunt lacus, in iaculis mauris lectus at augue. Donec luctus nibh nec ullamcorper feugiat.</p>
+                    <h3>Login</h3>
+                    <p>Access to your personal account if you have already registered in the system. /
+                        Доступ к личному кабинету, если вы уже регистрировались в системе.</p>
                     </div>
               </div>
 
                 <div class="templatemo_hexservices col-sm-6">
                     <div class="blok text-center">
                       <div class="hexagon-a">
-                         <a class="hlinktop" href="#">
+                         <a class="hlinktop" href="register">
                              <div class="hexa-a">
                                 <div class="hcontainer-a">
                               <div class="vertical-align-a">
-                                <span class="texts-a"><i class="fa fa-briefcase"></i></span>
+                                <span class="texts-a"><i class="fa fa-user"></i></span>
                               </div>
                             </div>
                              </div>
@@ -158,8 +134,9 @@
                          </div>
                          </div>
                          <div class="templatemo_servicetext">
-                        <h3>Aliquam faucibus</h3>
-                        <p>Vivamus a purus vel ante fermentum bibendum. Sed laoreet, enim quis euismod egestas, risus tortor tincidunt lacus, in iaculis mauris lectus at augue. Donec luctus nibh nec ullamcorper feugiat.</p>
+                        <h3>Registration</h3>
+                        <p>Registration of a personal account, if you have not yet registered in the system. /
+                            Регистрация личного кабинета, если вы ещё не регистрировались в системе.</p>
                         </div>
                   </div>
 
@@ -189,19 +166,23 @@
                          </div>
                          </div>
                          <div class="templatemo_servicetext">
-                        <h3>Aliquam faucibus</h3>
-                        <p>Vivamus a purus vel ante fermentum bibendum. Sed laoreet, enim quis euismod egestas, risus tortor tincidunt lacus, in iaculis mauris lectus at augue. Donec luctus nibh nec ullamcorper feugiat.</p>
+                        <h3>Main service</h3>
+                        <p>The main service for uploading data in .csv format. / Основной сервис для загрузки данных в формате .csv.</p>
                         </div>
                   </div>
 
                 <div class="templatemo_hexservices col-sm-6">
                     <div class="blok text-center">
                       <div class="hexagon-a">
-                         <a class="hlinktop" href="#">
+                          {% if user.is_authenticated %}
+                              <a class="hlinktop" href="profile">
+                          {% else %}
+                              <a class="hlinktop" href="logout">
+                          {% endif %}
                              <div class="hexa-a">
                                 <div class="hcontainer-a">
                               <div class="vertical-align-a">
-                                <span class="texts-a"><i class="fa fa-briefcase"></i></span>
+                                <span class="texts-a"><i class="fa fa-home"></i></span>
                               </div>
                             </div>
                              </div>
@@ -220,19 +201,19 @@
                          </div>
                          </div>
                          <div class="templatemo_servicetext">
-                        <h3>Aliquam faucibus</h3>
-                        <p>Vivamus a purus vel ante fermentum bibendum. Sed laoreet, enim quis euismod egestas, risus tortor tincidunt lacus, in iaculis mauris lectus at augue. Donec luctus nibh nec ullamcorper feugiat.</p>
+                        <h3>Profile</h3>
+                        <p>Access to your personal page if you have already login in the system. / доступ к личному кабинету, если вы уде авторизированы в системе.</p>
                         </div>
                   </div>
 
                 <div class="templatemo_hexservices col-sm-6">
                     <div class="blok text-center">
                       <div class="hexagon-a">
-                         <a class="hlinktop" href="#">
+                         <a class="hlinktop" href="logout">
                              <div class="hexa-a">
                                 <div class="hcontainer-a">
                               <div class="vertical-align-a">
-                                <span class="texts-a"><i class="fa fa-briefcase"></i></span>
+                                <span class="texts-a"><i class="fa fa-sign-out"></i></span>
                               </div>
                             </div>
                              </div>
@@ -251,8 +232,8 @@
                          </div>
                          </div>
                          <div class="templatemo_servicetext">
-                        <h3>Aliquam faucibus</h3>
-                        <p>Vivamus a purus vel ante fermentum bibendum. Sed laoreet, enim quis euismod egestas, risus tortor tincidunt lacus, in iaculis mauris lectus at augue. Donec luctus nibh nec ullamcorper feugiat.</p>
+                        <h3>Logout</h3>
+                        <p>Log out of the account if it has already been logged in. / Выход из аккаунта, если в него уже был произведён вход.</p>
                         </div>
                   </div>
 

@@ -13,9 +13,6 @@ def index(request):
 def devs(request):
     return render(request, 'main/devs.html')
 
-def about(request):
-    return render(request, 'main/about.html')
-
 def login_view(request):
     if request.method == 'POST':
         form = LoginForm(request.POST)
