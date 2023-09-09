@@ -139,3 +139,7 @@ DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 AUTHENTICATION_BACKENDS = [
     'main.backends.EmailBackend',
 ]
+
+DATA_UPLOAD_MAX_MEMORY_SIZE = 10 * 1024 * 1024
+
+FILE_UPLOAD_MAX_MEMORY_SIZE = 10 * 1024 * 1024
