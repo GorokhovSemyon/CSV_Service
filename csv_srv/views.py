@@ -74,6 +74,7 @@ class CsvUploadView(View):
             csv_file_instance = CsvFile(
                 name=uploaded_file.name,
                 columns=list(df.columns),  # Записываем имена колонок в виде списка
+                csv_data = uploaded_file
             )
             csv_file_instance.save()
 
