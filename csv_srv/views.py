@@ -5,10 +5,12 @@ from django.shortcuts import render
 from django.views import View
 from .forms import CsvUploadForm
 import pandas as pd
+from .permissions import IsAdmin
 
 class CsvFileList(generics.ListCreateAPIView):
     queryset = CsvFile.objects.all()
     serializer_class = CsvFileSerializer
+    permission_classes = [IsAdmin]
 
 class CsvUploadView(View):
     template_name = 'csv_srv/csv_upload.html'

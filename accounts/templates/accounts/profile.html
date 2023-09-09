@@ -69,8 +69,11 @@
                     <div class="admin_check">
                     {% if user.is_staff %}
                             <a href="/admin" style="color: #b69e40;">Панель админа</a>
+                        <div class="files_list">
+                        <a href="/csv_service/api/csv_files/" style="color: #b69e40;">Список файлов</a>
+                        </div>
                     {% else %}
-                            <p>Статус админа не подтвержден</p>
+                        <p>Статус админа не подтвержден</p>
                     {% endif %}
                     </div>
                 </span></p>
