@@ -5,8 +5,13 @@ from django.shortcuts import render
 from django.views import View
 from .forms import CsvUploadForm
 import pandas as pd
+import io
 from .permissions import IsAdmin
 from rest_framework.permissions import IsAuthenticated
+from rest_framework.views import APIView
+from rest_framework.response import Response
+from rest_framework import status
+from django.http import HttpResponseServerError
 
 class CsvFileList(generics.ListCreateAPIView):
     queryset = CsvFile.objects.all()
@@ -17,6 +22,33 @@ class CsvFileViewOnly(viewsets.ReadOnlyModelViewSet):
     queryset = CsvFile.objects.all()
     serializer_class = CsvFileSerializer
     permission_classes = [IsAuthenticated]
+
+
+class CsvFileAPIView(APIView):
+    def get(self, request, csv_file_id):
+        try:
+            csv_data = CsvFile.objects.get(id=csv_file_id)
+        except CsvFile.DoesNotExist:
+            return Response(status=status.HTTP_404_NOT_FOUND)
+
+        # Прочитайте файл CSV и преобразуйте его в DataFrame с помощью pandas
+        try:
+            csv_file = csv_data.csvfile  # Предположим, что поле csvfile ссылается на файл CSV
+            df = pd.read_csv(io.StringIO(csv_file.read().decode('utf-8')))
+        except Exception as e:
+            return HttpResponseServerError(f"Failed to read CSV file: {e}", status=status.HTTP_500_INTERNAL_SERVER_ERROR)
+
+        # Преобразуйте DataFrame в список словарей для сериализации в JSON
+        csv_rows = df.to_dict(orient='records')
+
+        # Возвращаем данные в формате JSON
+        data = {
+            'name': csv_data.name,
+            'columns': list(df.columns),
+            'rows': csv_rows,
+        }
+        return Response(data, status=status.HTTP_200_OK)
+
 
 class CsvUploadView(View):
     template_name = 'csv_srv/csv_upload.html'
