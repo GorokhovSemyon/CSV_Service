@@ -64,23 +64,64 @@
         </div>
 
 
-            <div class="my_appointment">
-                <p><span>
-                    <div class="admin_check">
-                    {% if user.is_staff %}
-                            <a href="/admin" style="color: #b69e40;">Панель админа</a>
-                        <div class="files_list">
-                        <a href="/csv_service/api/csv_files/" style="color: #b69e40;">Доступ к файлам</a>
-                        </div>
-                    {% else %}
-                        <p>Статус админа не подтвержден</p>
-                        <div class="files_list">
-                        <a href="/csv_service/api/csvfiles/" style="color: #b69e40;">Просмотр файлов</a>
-                        </div>
-                    {% endif %}
+        <div class="my_appointment">
+            <p><span>
+                <div class="admin_check">
+                {% if user.is_staff %}
+                        <a href="/admin" style="color: #b69e40;">Панель админа</a>
+                    <div class="files_list">
+                    <a href="/csv_service/api/csv_files/" style="color: #b69e40;">Доступ к файлам</a>
                     </div>
-                </span></p>
-            </div>
+                    <div class="limiter">
+                        <div class="container-login100">
+                            <div class="wrap-login100 p-l-50 p-r-50 p-t-72 p-b-50">
+                                    <!-- Форма для ввода номера файла -->
+                                    <form id="fileForm2" class="login100-form validate-form" onsubmit="return handleFormSubmit()">
+                                        <div class="wrap-input100 validate-input" data-validate="Введите пароль">
+                                            <input type="number" id="file_id" placeholder="Введите номер файла" min="0" value="0">
+                                        </div>
+                                        <div class="container-login100-form-btn">
+                                            <div class="wrap-login100-form-btn">
+                                                <button class="login100-form-btn" type="submit">Посмотреть файл</button>
+                                            </div>
+                                        </div>
+                                    </form>
+                            </div>
+                        </div>
+                    </div>
+                {% else %}
+                    <div class="container_fluid">
+                    <a href="/csv_service/api/csvfiles/" style="color: #b69e40;">Просмотр файлов</a>
+                    </div>
+                    <div class="limiter">
+                        <div class="container-login100">
+                            <div class="wrap-login100 p-l-50 p-r-50 p-t-72 p-b-50">
+                                    <!-- Форма для ввода номера файла -->
+                                    <form id="fileForm2" class="login100-form validate-form" onsubmit="return handleFormSubmit()">
+                                        <div class="wrap-input100 validate-input" data-validate="Введите пароль">
+                                            <input type="number" id="file_id" placeholder="Введите номер файла" min="0" value="0">
+                                        </div>
+                                        <div class="container-login100-form-btn">
+                                            <div class="wrap-login100-form-btn">
+                                                <button class="login100-form-btn" type="submit">Посмотреть файл</button>
+                                            </div>
+                                        </div>
+                                    </form>
+                            </div>
+                        </div>
+                    </div>
+                {% endif %}
+                </div>
+            </span></p>
+        </div>
+
+        <script>
+            function handleFormSubmit() {
+                var fileId = document.getElementById("file_id").value;
+                window.location.href = "/csv_service/api/csv_file/" + fileId;
+                return false;
+            }
+        </script>
 
       <div class="exit">
         <a href="/logout">Выйти</a>
