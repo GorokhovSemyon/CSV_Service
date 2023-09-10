@@ -33,7 +33,7 @@ class CsvFileAPIView(APIView):
 
         # Прочитайте файл CSV и преобразуйте его в DataFrame с помощью pandas
         try:
-            csv_file = csv_data.csvfile  # Предположим, что поле csvfile ссылается на файл CSV
+            csv_file = csv_data.csv_data  # Предположим, что поле csvfile ссылается на файл CSV
             df = pd.read_csv(io.StringIO(csv_file.read().decode('utf-8')))
         except Exception as e:
             return HttpResponseServerError(f"Failed to read CSV file: {e}", status=status.HTTP_500_INTERNAL_SERVER_ERROR)
@@ -74,7 +74,7 @@ class CsvUploadView(View):
             csv_file_instance = CsvFile(
                 name=uploaded_file.name,
                 columns=list(df.columns),  # Записываем имена колонок в виде списка
-                csv_data = uploaded_file
+                csv_data=uploaded_file
             )
             csv_file_instance.save()
 
