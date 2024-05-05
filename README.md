@@ -5,8 +5,8 @@
 Проект реализован с использованием:
 
 - Python
-- Django
-- Django REST framework
+  - Django
+  - Django REST framework
 - whitenoise
 - gunicorn
 - Docker
