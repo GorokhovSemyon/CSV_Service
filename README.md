@@ -21,7 +21,7 @@
 
 #### Список CSV файлов
 
-Путь: /csv_service/api/csv_files/
+Путь: csv_service/api/csv_files/
 
 Методы:
 - GET /csv_service/api/csv_files/: Получить список всех CSV файлов (доступно администраторам).
