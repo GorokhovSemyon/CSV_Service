@@ -6,7 +6,7 @@
 
 - Python
   - Django
-  - Django REST framework
+  - REST framework
 - whitenoise
 - gunicorn
 - Docker
