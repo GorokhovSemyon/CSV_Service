@@ -2,7 +2,7 @@
 
 ![main_page](csv_files/main_page.png)
 
-Проект реализован с использованием:
+Проект реализован используя:
 
 - Python
   - Django
